@@ -1,0 +1,48 @@
+# NVIDIA booter dispatch table (verbatim excerpt)
+# source: NVIDIA/open-gpu-kernel-modules src/nvidia/generated/g_kernel_gsp_nvoc.c
+# function: kgspGetBinArchiveBooterLoadUcode halified body (~line 1753)
+# fetched 2026-10-24 from main
+
+    // kgspGetBinArchiveBooterLoadUcode -- halified (7 hals) body
+    if (( ((rmVariantHal_HalVarIdx >> 5) == 0UL) && ((1UL << (rmVariantHal_HalVarIdx & 0x1f)) & 0x00000001UL) )) /* RmVariantHal: VF */ 
+    {
+        pThis->__kgspGetBinArchiveBooterLoadUcode__ = &kgspGetBinArchiveBooterLoadUcode_80f438;
+    }
+    else
+    {
+        if (( ((chipHal_HalVarIdx >> 5) == 1UL) && ((1UL << (chipHal_HalVarIdx & 0x1f)) & 0x00000400UL) )) /* ChipHal: GA100 */ 
+        {
+            pThis->__kgspGetBinArchiveBooterLoadUcode__ = &kgspGetBinArchiveBooterLoadUcode_GA100;
+        }
+        else if (( ((chipHal_HalVarIdx >> 5) == 1UL) && ((1UL << (chipHal_HalVarIdx & 0x1f)) & 0x00000300UL) )) /* ChipHal: TU116 | TU117 */ 
+        {
+            pThis->__kgspGetBinArchiveBooterLoadUcode__ = &kgspGetBinArchiveBooterLoadUcode_TU116;
+        }
+        else if (( ((chipHal_HalVarIdx >> 5) == 1UL) && ((1UL << (chipHal_HalVarIdx & 0x1f)) & 0x000000e0UL) )) /* ChipHal: TU102 | TU104 | TU106 */ 
+        {
+            pThis->__kgspGetBinArchiveBooterLoadUcode__ = &kgspGetBinArchiveBooterLoadUcode_TU102;
+        }
+        else if (( ((chipHal_HalVarIdx >> 5) == 1UL) && ((1UL << (chipHal_HalVarIdx & 0x1f)) & 0x0000f800UL) )) /* ChipHal: GA102 | GA103 | GA104 | GA106 | GA107 */ 
+        {
+            pThis->__kgspGetBinArchiveBooterLoadUcode__ = &kgspGetBinArchiveBooterLoadUcode_GA102;
+        }
+        else if (( ((chipHal_HalVarIdx >> 5) == 1UL) && ((1UL << (chipHal_HalVarIdx & 0x1f)) & 0x01f00000UL) )) /* ChipHal: AD102 | AD103 | AD104 | AD106 | AD107 */ 
+        {
+            pThis->__kgspGetBinArchiveBooterLoadUcode__ = &kgspGetBinArchiveBooterLoadUcode_AD102;
+        }
+        else
+        {
+            pThis->__kgspGetBinArchiveBooterLoadUcode__ = &kgspGetBinArchiveBooterLoadUcode_80f438;
+        }
+    }
+
+    // kgspGetBinArchiveBooterUnloadUcode -- halified (7 hals) body
+
+# --- accessor for the shared fallback ---
+# source: src/nvidia/generated/g_kernel_gsp_nvoc.h (line 2247)
+static inline const BINDATA_ARCHIVE * kgspGetBinArchiveBooterLoadUcode_80f438(struct KernelGsp *pKernelGsp){
+    NV_ASSERT_OR_RETURN_PRECOMP(0, ((void *)0));
+}
+
+static inline const BINDATA_ARCHIVE * kgspGetBinArchiveBooterUnloadUcode_80f438(struct KernelGsp *pKernelGsp){
+    NV_ASSERT_OR_RETURN_PRECOMP(0, ((void *)0));
